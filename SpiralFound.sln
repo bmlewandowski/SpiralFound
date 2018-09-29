@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiralFound", "SpiralFound\SpiralFound.csproj", "{F3FDA8DC-08EC-43A3-8C22-6AD6D41DF738}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3FDA8DC-08EC-43A3-8C22-6AD6D41DF738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FDA8DC-08EC-43A3-8C22-6AD6D41DF738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FDA8DC-08EC-43A3-8C22-6AD6D41DF738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FDA8DC-08EC-43A3-8C22-6AD6D41DF738}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6CB4911-C26C-4688-9ED7-1C47DA4A645A}
+	EndGlobalSection
+EndGlobal

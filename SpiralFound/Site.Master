@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SpiralFound.Site" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <title>SpiralFound</title>
+    <meta name="viewport" content="width=1280" />
+    <meta name="description" content="Curate your own Collection with SpiralFound" />
+    <meta name="keywords" content="Curate, Collect, Creative, Connect" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         <!--LOAD SUB STYLESHEETS/JS -->   
+    </asp:ContentPlaceHolder>
+
+        <!--LOAD STYLESHEETS/JS -->
+    <link rel="stylesheet" type="text/css" href="/Styles/global.css" />
+	<script src="/Scripts/jquery-1.7.1.min.js" type="text/jscript"></script>
+	<script src="/Scripts/jquery.masonry.min.js" type="text/jscript"></script>
+        <script type="text/javascript">
+            function show_command_box(elementID) {
+                    document.getElementById('commands-boxshare').style.display = 'none';
+                    document.getElementById('commands-boxcopy').style.display = 'none';
+                    document.getElementById('commands-boxsave').style.display = 'none';
+                    document.getElementById('commands-boxadd').style.display = 'none';
+                    document.getElementById('commands-boxedit').style.display = 'none';
+                    document.getElementById('commands-boxdelete').style.display = 'none';
+                    document.getElementById(elementID).style.display = 'block';
+                }
+                function hide_command_box(elementID) {
+                    document.getElementById(elementID).style.display = 'none';
+                }
+                function show_signup_box(elementID) {
+                    document.getElementById(elementID).style.display = 'block';
+                }
+
+                function show_addbook_box(elementID) {
+                    document.getElementById(elementID).style.display = 'block';
+                }
+
+        </script>
+
+
+        <!--MASONRY FUNCTION -->
+    <script type="text/javascript">
+        $(function () {
+            var $container = $('#container');
+            $container.imagesLoaded(function () {
+                $container.masonry({
+                    itemSelector: '.item'
+                });
+            });
+        });
+	</script>
+
+        <!--GOOGLE ANALYTICS -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20506889-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</head>
+<body>
+
+<div id="fb-root">
+  <!-- The JS SDK requires the fb-root element in order to load properly. -->
+</div>
+      <script type="text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '345128432203657',
+            status     : true, 
+            cookie     : true,
+            xfbml      : true,
+            oauth      : true,
+          });
+        };
+
+
+        (function(d){
+           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           d.getElementsByTagName('head')[0].appendChild(js);
+         }(document));
+
+
+      </script>
+
+
+    <form id="form1" runat="server">
+
+    <!--JAVASCRIPT SCRIPT MANAGER-->
+    <asp:ToolKitScriptManager ID="toolKitScriptManager" runat="server">
+    </asp:ToolKitScriptManager>
+
+
+    <!--TOP ANCHOR-->
+        <a name="top"></a>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">       
+        </asp:ContentPlaceHolder>
+
+
+<div id="navbar">
+	
+	<div id="navleft">
+    <a href="/Default.aspx" title="Home">
+		<img id="logo" src="/images/interface/logo.png" alt="" />
+    </a>   
+	</div>
+		
+
+	<div id="navright" runat="server">
+          
+		<div class="navitem">
+
+			<p id="username"><asp:HyperLink ID="hyp_UserName" runat="server" ForeColor="Black"></asp:HyperLink></p>
+			<p id="follows"><asp:HyperLink ID="hyp_following" runat="server" ForeColor="Black">FOLLOWING</asp:HyperLink> (<asp:Literal ID="lit_following" runat="server"></asp:Literal>) <asp:HyperLink ID="hyp_followers" runat="server" ForeColor="Black">FOLLOWERS</asp:HyperLink> (<asp:Literal ID="lit_followers" runat="server"></asp:Literal>)</p>
+            <p id="logout"><asp:LinkButton ID="lbn_logout" runat="server" onclick="lbn_logout_Click">Logout</asp:LinkButton></p>
+            <br />
+
+		</div>
+		<div class="navitem"><asp:ImageButton ID="imb_user_profile" runat="server" 
+                Width="100px" onclick="imb_user_profile_Click" /></div>
+
+	</div>
+
+        <div id="navlogin" runat="server">
+
+            <div id="signup-box">
+                <div class="command-boxtop"></div><div class="command-boxcontent">
+                    <img src="/images/interface/commands/command-close.png" onclick="hide_command_box('signup-box')" class="command-boxclose" alt="CLOSE" />  
+                    <img src="/images/interface/commands/loginhere.png" alt="Login Here" />
+                
+  				<br />
+				<br />
+
+				You can sign in quick by just Clicking the FaceBook Button below:
+
+				<br />
+				<br />              
+
+                <fb:login-button  on-login="window.top.location='https://graph.facebook.com/oauth/authorize?client_id=345128432203657&redirect_uri=http://www.spiralfound.com/Account.aspx&scope=user_about_me,friends_about_me,email,user_birthday,publish_stream,user_photos';" size="large" >SpiralFound</fb:login-button>
+                
+                <br />
+                <br />
+
+                Or….you can login with your SpiralFound UserName and Password:
+
+				<br />
+				<br />
+
+				<div id="usernamepassword" style="text-align:right; width:300px;">
+
+                    <asp:Label ID="lblUsername" runat="server" Text="User Name:"></asp:Label>
+                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
+                        ControlToValidate="txtUsername" ErrorMessage="User Name is required." 
+                        ToolTip="User Name is required." ValidationGroup="LoginWizard" ForeColor="Red">X</asp:RequiredFieldValidator>
+
+                    <br />
+
+                    <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
+                        ControlToValidate="txtPassword" ErrorMessage="Password is required." 
+                        ToolTip="Password is required." ValidationGroup="LoginWizard" ForeColor="Red">X</asp:RequiredFieldValidator>
+                    <br />
+                    <br />
+
+                    <asp:CheckBox ID="chk_rememberme" runat="server" Text="   Remember me" TextAlign="Right" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnlogin" runat="server" Text="Login" onclick="btnlogin_Click" ValidationGroup="LoginWizard" Width="75px" Height="30px" TabIndex="1" />
+                    <br />
+                    
+
+                    <asp:Label ID="lbl_ErrorMessage" runat="server" Text="" Style="font-size:12px; color:red;"></asp:Label>
+
+                </div>
+
+
+		        </div>
+                
+                <div class="command-boxbottom"></div>
+            </div>
+
+
+
+            <div class="navitem">
+                <img id="signup" src="/images/interface/login.png" onclick="show_signup_box('signup-box')" alt="" />
+            </div>
+
+
+
+
+        </div>
+</div>
+
+    </form>
+</body>
+</html>

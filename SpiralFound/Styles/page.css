@@ -1,0 +1,68 @@
+#col_left {
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:10px;
+	margin-bottom:0px;
+	border:0px;
+	padding:0px;
+	width:230px;
+	float:left;
+}
+
+#col_center {
+	margin-top:20px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	border:0px;
+	padding:0px;
+	width:730px;
+	float:left;
+}
+
+#col_right {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	border:0px;
+	padding:0px;
+  	margin-left:1000px;
+	margin-right:0px;
+}
+
+.pagethumb {
+	float:left;
+}
+
+#page-top {
+	background-image:url('../images/interface/page/page-top.png');
+	height:40px;
+	text-align:center;
+	font-size:30px;
+}
+
+#page-descrip {
+	padding-left:80px;
+	padding-right:50px;
+	text-align:left;
+	background-image:url('../images/interface/page/page-descrip.png');
+}
+
+#page-content {
+	background-image:url('../images/interface/page/page-content.png');
+	text-align:center;
+	min-height:750px;
+}
+
+#container {
+	padding-left:80px;
+}
+
+
+
+#page-bottom {
+	background-image:url('../images/interface/page/page-bottom.png');
+	height:95px;
+	text-align:center;
+}

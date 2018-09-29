@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="SpiralFound.UserMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+        <!--LOAD STYLESHEETS/JS -->
+    <link rel="stylesheet" type="text/css" href="/Styles/user.css" />
+
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<!--HIDDEN LABELS-->
+<asp:Literal ID="lit_authorId" runat="server" Visible="false"></asp:Literal>
+
+<div id="col_left">
+
+	<div id="ownercard">
+
+		<div id="ownercardleft">
+			<div id="ownercard-top"><asp:HyperLink ID="hyp_authorName" runat="server" ForeColor="#FFFFFF"></asp:HyperLink></div>
+			<div id="ownercard-middle"><asp:ImageButton ID="imb_author" runat="server" CssClass="author_image" /></div>
+			<div id="ownercard-bottom"> 
+                <asp:ImageButton ID="imb_followUser" runat="server" ImageUrl="~/Images/Interface/Owner/ownercard-follow.png" OnCommand="imb_followUser_Command" Visible="false" />                     
+            </div>
+		</div>
+
+		<div id="ownercardright">
+			<img src="/images/interface/owner/ownercard-stack.png" alt="" />
+		</div>
+
+		<div class="clearfloat"></div>
+
+	</div>
+
+
+
+	<div class="usercommand"><asp:HyperLink ID="hyp_userFollowers" runat="server">Followers (<asp:Literal ID="lit_userFollowers" runat="server"></asp:Literal>)</asp:HyperLink></div>
+	<div class="usercommand"><asp:HyperLink ID="hyp_userFollowing" runat="server">Following (<asp:Literal ID="lit_userFollowing" runat="server"></asp:Literal>)</asp:HyperLink></div>
+
+    <span id="user_command_panel" runat="server" visible="false">
+	    <div class="usercommand"><asp:HyperLink ID="hyp_myCollections" runat="server">My Books</asp:HyperLink></div>
+    </span>
+
+    <span id="author_command_panel" runat="server" visible="false">
+        <div class="usercommand">Settings</div>
+    
+    </span>
+
+</div>
+
+<div id="col_center">
+
+  <asp:ContentPlaceHolder ID="centercolumn" runat="server">
+  </asp:ContentPlaceHolder>
+
+</div>
+
+</asp:Content>
